@@ -19,7 +19,7 @@ const HeaderComponent = () => {
     <ImageBackground
       accessibilityRole="image"
       testID="new-app-screen-HeaderComponent"
-      source={require('../logo.png')}
+      source={require('../assets/logo.png')}
       style={[
         styles.background,
         {
