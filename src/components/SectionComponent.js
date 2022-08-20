@@ -3,7 +3,7 @@ import {StyleSheet, Text, useColorScheme, View} from 'react-native';
 
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 
-const Section = ({children, title}) => {
+const SectionComponent = ({children, title}) => {
   const isDarkMode = useColorScheme() === 'dark';
   return (
     <View style={styles.sectionContainer}>
@@ -48,4 +48,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Section;
+export default SectionComponent;

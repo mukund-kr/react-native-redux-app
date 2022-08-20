@@ -8,8 +8,8 @@ import {
   useColorScheme,
   View,
 } from 'react-native';
-import Header from '../components/Header';
-import Section from '../components/Section';
+import HeaderComponent from '../components/HeaderComponent';
+import SectionComponent from '../components/SectionComponent';
 import Colors from '../constants/Colors';
 
 const DetailScreen = () => {
@@ -24,15 +24,15 @@ const DetailScreen = () => {
       <ScrollView
         contentInsetAdjustmentBehavior="automatic"
         style={backgroundStyle}>
-        <Header />
+        <HeaderComponent />
         <View
           style={{
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
           }}>
-          <Section title="Step One">
+          <SectionComponent title="Step One">
             Edit <Text style={styles.highlight}>App.js</Text> to change this
             screen and then come back to see your edits.
-          </Section>
+          </SectionComponent>
         </View>
       </ScrollView>
     </SafeAreaView>
