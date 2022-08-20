@@ -1,7 +1,5 @@
 import React from 'react';
 import {
-  Colors,
-  Header,
   SafeAreaView,
   ScrollView,
   StatusBar,
@@ -10,14 +8,16 @@ import {
   useColorScheme,
   View,
 } from 'react-native';
+import Header from '../components/Header';
+import Section from '../components/Section';
+import Colors from '../constants/Colors';
 
-import Section from './src/components/Section';
-
-const DetailsScreen = () => {
+const DetailScreen = () => {
   const isDarkMode = useColorScheme() === 'dark';
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
+
   return (
     <SafeAreaView style={backgroundStyle}>
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
@@ -39,7 +39,7 @@ const DetailsScreen = () => {
   );
 };
 
-export default DetailsScreen;
+export default DetailScreen;
 
 const styles = StyleSheet.create({
   highlight: {
