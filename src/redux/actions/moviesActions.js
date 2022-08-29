@@ -8,10 +8,11 @@ const BASE_URL = `${API_URL}?api_key=${API_KEY}&${PARAMS}`;
 export const getMovies = () => {
   return async dispatch => {
     const res = await axios.get(`${BASE_URL}`);
-    if (res.data) {
+    console.log(res.data.results);
+    if (res.data.results) {
       dispatch({
         type: GET_MOVIES,
-        payload: res.data,
+        payload: res.data.results,
       });
     } else {
       console.log('Unable to fetch');

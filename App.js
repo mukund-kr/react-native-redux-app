@@ -5,27 +5,19 @@
  * @format
  * @flow strict-local
  */
-
 import React from 'react';
+import {Provider} from 'react-redux';
+import RootNavigator from './src/navigation/RootNavigator';
+import {store} from './src/redux/store';
 
-import {NavigationContainer} from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import DetailScreen from './src/screens/DetailScreen';
-import HomeScreen from './src/screens/HomeScreen';
 const App = () => {
-  const Stack = createNativeStackNavigator();
-
+  console.log(store.getState());
   return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen
-          name="Home"
-          component={HomeScreen}
-          options={{title: 'Home'}}
-        />
-        <Stack.Screen name="Details" component={DetailScreen} />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <Provider store={store}>
+      <RootNavigator />
+
+      {/* <MyScreen /> */}
+    </Provider>
   );
 };
 

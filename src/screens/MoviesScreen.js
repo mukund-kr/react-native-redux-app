@@ -8,7 +8,7 @@ import {
   View,
 } from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
-import {addFavorite, getMovies, removeFavorite} from 'src/redux/actions';
+import {addFavorite, getMovies, removeFavorite} from '../redux/actions';
 
 const MoviesScreen = () => {
   const {movies, favorites} = useSelector(state => state.moviesReducer);
@@ -17,24 +17,24 @@ const MoviesScreen = () => {
 
   const fetchMovies = () => dispatch(getMovies());
 
+  const addToFavorites = movie => dispatch(addFavorite(movie));
+  const removeFromFavorites = movie => dispatch(removeFavorite(movie));
+
   useEffect(() => {
     fetchMovies();
   }, []);
 
-  const addToFavorites = movie => dispatch(addFavorite(movie));
-  const removeFromFavorites = movie => dispatch(removeFavorite(movie));
+  const exists = movie => {
+    return favorites.filter(item => item.id === movie.id).length > 0
+      ? true
+      : false;
+  };
 
   const handleAddFavorite = movie => {
     addToFavorites(movie);
   };
   const handleRemoveFavorite = movie => {
     removeFromFavorites(movie);
-  };
-
-  const exists = movie => {
-    return favorites.filter(item => item.id === movie.id).length > 0
-      ? true
-      : false;
   };
 
   return (
@@ -79,6 +79,7 @@ const MoviesScreen = () => {
                           name="favorite-outline"
                         />
                         */}
+                      <Text>fav</Text>
                     </TouchableOpacity>
                     {/* </View> */}
                   </View>

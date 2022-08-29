@@ -9,8 +9,8 @@ import {
   useColorScheme,
   View,
 } from 'react-native';
-import HeaderComponent from '../components/HeaderComponent';
-import SectionComponent from '../components/SectionComponent';
+import HeaderComponent from '../components/Header/HeaderComponent';
+import SectionComponent from '../components/Section/SectionComponent';
 import Colors from '../constants/Colors';
 
 const DetailScreen = ({navigation}) => {

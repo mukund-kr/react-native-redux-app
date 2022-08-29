@@ -10,8 +10,8 @@
 
 import React from 'react';
 import {ImageBackground, StyleSheet, Text, useColorScheme} from 'react-native';
-import Colors from '../constants/Colors';
-import HermesBadge from './HermesBadge';
+import Colors from '../../constants/Colors';
+import HermesBadge from '../HermesBadge';
 
 const HeaderComponent = () => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -19,7 +19,7 @@ const HeaderComponent = () => {
     <ImageBackground
       accessibilityRole="image"
       testID="new-app-screen-HeaderComponent"
-      source={require('../assets/logo.png')}
+      source={require('../../../src/assets/logo.png')}
       style={[
         styles.background,
         {
